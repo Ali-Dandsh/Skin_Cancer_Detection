@@ -1,0 +1,11 @@
+Flask
+tensorflow
+numpy
+Pillow
+Werkzeug
+matplotlib
+pandas
+seaborn
+torch
+torchvision
+scikit-learn
