@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Skin Cancer Classifier</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Skin Cancer Image Classifier</h1>
+    <form method="POST" enctype="multipart/form-data">
+      <input type="file" name="image" required>
+      <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+      <div class="result">
+        <h2>Prediction: <span class="{{ prediction }}">{{ prediction|capitalize }}</span></h2>
+        <p>Confidence: {{ '%.2f' % confidence }}%</p>
+        <img src="{{ image_path }}" alt="Uploaded Image">
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>
